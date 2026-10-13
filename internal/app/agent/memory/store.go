@@ -49,7 +49,7 @@ func NewMemoryStore(agentMemoryRepo ports.AgentMemoryRepository, logger *slog.Lo
 func (m *MemoryStore) UpdateChatHistory(ctx context.Context, userID int64, msgs []*schema.Message) {
 	// we don't store system message.
 	// because system message will be inserted into the chat right before invoking the chat model
-	if msgs == nil || len(msgs) == 0 {
+	if len(msgs) == 0 {
 		return
 	}
 	userState := m.getUserState(userID)
