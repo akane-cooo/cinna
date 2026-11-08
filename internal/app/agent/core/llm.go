@@ -25,7 +25,7 @@ var (
 const (
 	deepseekBaseURL        = "https://api.deepseek.com"
 	deepseekFlashModelName = "deepseek-flash"
-	gptModelName           = "gpt-5.6-luna"
+	gptModelName           = "gpt-6-luna"
 )
 
 type APIKey struct {

@@ -25,8 +25,9 @@ func (a *CinnaReactAgent) HandleText(
 	defer unlockRequest()
 
 	// get server time for agent's time recognition
+	weekday := messageTime.Weekday()
 	timeMessage := schema.AssistantMessage(
-		fmt.Sprintf("Message time: %s", messageTime.Format(time.RFC3339)),
+		fmt.Sprintf("Message time: %s, %s", messageTime.Format(time.RFC3339), weekday),
 		nil,
 	)
 
